@@ -42,9 +42,7 @@ These comments  will create a .deb file in the parent directory.
 
  ## Folder and File Structure
 
-       The project contains the following folders and files:
-> calculator : This folder contains the source code for the calculator.
-
+ 
 >calculator.py : This file contains the code for the calculator.
 
 >README.md : This file contains information about the project and how to use it.
