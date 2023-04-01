@@ -6,7 +6,7 @@
 - The fpm utility is used to create a Debian package from the executable.
 
 
-##Usage 
+## Usage 
 
 ##### To use the script, follow these steps:      To use the script, follow these steps:    
       
@@ -40,7 +40,7 @@ These comments  will create a .deb file in the parent directory.
 ######  9.`$ /opt/calculator/calculator`
 
 
- # Folder and File Structure
+ ## Folder and File Structure
 
        The project contains the following folders and files:
 > calculator : This folder contains the source code for the calculator.
@@ -50,7 +50,7 @@ These comments  will create a .deb file in the parent directory.
 >README.md : This file contains information about the project and how to use it.
 		  
 
-# Requirements
+## Requirements
 
 - Python 3.8.10
 - pyinstaller library
@@ -59,7 +59,7 @@ These comments  will create a .deb file in the parent directory.
 - tkinter library
 
 
-# Credits
+## Credits
 
 This project was developed by Dharani . Special thanks to the creators of the pyinstaller, fpm, and tkinter libraries for their contributions to the Python community.
 
