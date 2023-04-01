@@ -1,0 +1,63 @@
+import tkinter as tk
+from PIL import Image, ImageTk
+field_text=""
+
+def add_to_field(sth):
+    global field_text
+    field_text=field_text+str(sth)
+    field.delete("1.0","end")
+    field.insert("1.0",field_text)
+def calculate():
+    global field_text
+    result=str(eval(field_text))
+    field.delete("1.0","end")
+    field.insert("1.0",result)
+def clear():
+    global field_text
+    field_text=""
+    field.delete("1.0","end")
+sd=tk.Tk()
+sd.title("CALCULATOR")
+sd.geometry("277x340+{}+{}".format(int(sd.winfo_screenwidth()/2 - 500/2), int(sd.winfo_screenheight()/2 - 500/2)))
+sd.configure(background="DimGrey")
+image = Image.open("/home/ubuntu/calculatorimage.png")
+photo = ImageTk.PhotoImage(image)
+sd.iconphoto(True, photo)
+field=tk.Text(sd,height=2.5,width=50)
+field.grid(row=0,column=0,columnspan=100)
+field.configure(height=2.5)
+b1=tk.Button(sd,text="1",fg='white', bg='black',command=lambda:add_to_field(1),height= 2, width=4,font=("Impact",12, "bold"))
+b1.grid(row=2,column=0)
+b2=tk.Button(sd,text="2",fg='white', bg='black',command=lambda:add_to_field(2),height= 2,width=4, font=("Impact", 12, "bold"))
+b2.grid(row=2,column=1)
+b3=tk.Button(sd,text="3",fg='white', bg='black',command=lambda:add_to_field(3),height= 2,width=4, font=("Impact", 12, "bold"))
+b3.grid(row=2,column=2)
+b4=tk.Button(sd,text="4",fg='white', bg='black',command=lambda:add_to_field(4),height= 2,width=4, font=("Impact", 12, "bold"))
+b4.grid(row=3,column=0)
+b5=tk.Button(sd,text="5",fg='white', bg='black',command=lambda:add_to_field(5),height= 2,width=4, font=("Impact", 12, "bold"))
+b5.grid(row=3,column=1)
+b6=tk.Button(sd,text="6",fg='white', bg='black',command=lambda:add_to_field(6),height= 2,width=4, font=("Impact", 12, "bold"))
+b6.grid(row=3,column=2)
+b7=tk.Button(sd,text="7",fg='white', bg='black',command=lambda:add_to_field(7),height= 2,width=4, font=("Impact", 12, "bold"))
+b7.grid(row=4,column=0)
+b8=tk.Button(sd,text="8",fg='white', bg='black',command=lambda:add_to_field(8),height= 2,width=4, font=("Impact", 12, "bold"))
+b8.grid(row=4,column=1,)
+b9=tk.Button(sd,text="9",fg='white', bg='black',command=lambda:add_to_field(9),height= 2,width=4, font=("Impact", 12, "bold"))
+b9.grid(row=4,column=2)
+b0=tk.Button(sd,text="0",fg='white', bg='black',command=lambda:add_to_field(0),height= 2,width=4, font=("Impact", 12, "bold"))
+b0.grid(row=5,column=1)
+plus=tk.Button(sd,text="+",fg='white', bg='black',command=lambda:add_to_field("+"),height= 2,width=4, font=("Impact", 12, "bold"))
+plus.grid(row=2,column=3)
+minus=tk.Button(sd,text="-",fg='white', bg='black',command=lambda:add_to_field("-"),height= 2,width=4, font=("Impact", 12, "bold"))
+minus.grid(row=3,column=3)
+mul=tk.Button(sd,text="*",fg='white', bg='black',command=lambda:add_to_field("*"),height= 2,width=4, font=("Impact", 12, "bold"))
+mul.grid(row=4,column=3)
+div=tk.Button(sd,text="/",fg='white', bg='black',command=lambda:add_to_field("/"),height= 2,width=4, font=("Impact", 12, "bold"))
+div.grid(row=5,column=3)
+dot=tk.Button(sd,text=".",fg='white', bg='black',command=lambda:add_to_field("."),height= 2,width=4, font=("Impact", 12, "bold"))
+dot.grid(row=5,column=2)
+bt_clean=tk.Button(sd,text="clear",fg='white', bg='black',command=lambda: clear(),height= 2,width=4, font=("Impact", 12, "bold"))
+bt_clean.grid(row=5,column=0)
+bt_eq=tk.Button(sd,text="=",fg='white', bg='black',command=lambda: calculate(),height= 2,width=4, font=("Impact", 12, "bold"))
+bt_eq.grid(row=6,column=3)
+sd.mainloop()
